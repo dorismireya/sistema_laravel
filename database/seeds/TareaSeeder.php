@@ -13,10 +13,10 @@ class TareaSeeder extends Seeder
     public function run()
     {
         Tarea::create([
-        	'tarea' => 'Crear Tarea',
+        	'tarea' => 'Funciones',
             'id_funcion' => 1,
-        	'vista' => 'tareas.create',
-        	'detalle' => 'Creamos tareas',
+        	'vista' => 'funciones.funcion',
+        	'detalle' => 'Admintrador de Funciones',
         	'estado' => 'activo',
         	]);
     }
