@@ -7,12 +7,22 @@ use Illuminate\Foundation\Auth\User;
 
 class Usuario extends User
 {
-    protected $table = 'usuarios';
-    protected $primaryKey = 'id_usuario';
+
+    protected $table = 'users';
+    protected $primaryKey = 'id';
 
     public $fillable = [
-    	'nombres', 'apellidos', 'email', 'username', 'password', 'tipo', 'estado'
+    	'name', 'email', 'password', 'tipo', 'estado'
     	];
+
+	/**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 
     public function setPasswordAttribute($value)
     {
@@ -22,19 +32,13 @@ class Usuario extends User
     
     public function getNombreCompletoAttribute()
     {
-        return $this->attributes['nombres'] . ' ' .
-            $this->attributes['apellidos'];
+        return $this->attributes['name'];
     }
 
     public function usuarioTarea(){
-        return $this->hasMany('App\Modelos\UsuarioTarea', 'id_usuario', 'id_usuario');
+        return $this->hasMany('App\Modelos\UsuarioTarea', 'id_usuario', 'id');
     }
 
 
-    public function prueba(){
-
-        $pruebas = BD::table('usuarios')->get();
-        echo $pruebas;
-    }
 }
     

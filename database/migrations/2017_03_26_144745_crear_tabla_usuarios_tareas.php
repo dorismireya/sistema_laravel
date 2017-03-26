@@ -14,7 +14,6 @@ class CrearTablaUsuariosTareas extends Migration
     public function up()
     {
         Schema::create('usuarios_tareas', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id_usuario_tarea');
             $table->integer('id_usuario')->unsigned();
             $table->integer('id_tarea')->unsigned();
@@ -24,8 +23,8 @@ class CrearTablaUsuariosTareas extends Migration
         Schema::table('usuarios_tareas', function (Blueprint $table) {
             
             $table->foreign('id_usuario')
-                ->references('id_usuario')
-                ->on('usuarios');
+                ->references('id')
+                ->on('users');
 
             $table->foreign('id_tarea')
                 ->references('id_tarea')

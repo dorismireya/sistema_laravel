@@ -15,7 +15,6 @@ class CrearTablaTareas extends Migration
     {
 
           Schema::create('tareas', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id_tarea');
             $table->integer('id_funcion')->unsigned();
             $table->string('tarea');

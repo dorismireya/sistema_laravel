@@ -45,7 +45,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><b>adminlte-laravel</b></a>
+                <a class="navbar-brand" href="#"><b>Sistema FPVA</b></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -66,7 +66,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         </div>
     </div>
 
-
+    
     <section id="home" name="home">
         <div id="headerwrap">
             <div class="container">

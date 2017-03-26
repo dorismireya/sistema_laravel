@@ -14,7 +14,6 @@ class CrearTablaFunciones extends Migration
     public function up()
     {
         Schema::create('funciones', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id_funcion');
             $table->string('funcion');
             $table->string('icono')->nullable();

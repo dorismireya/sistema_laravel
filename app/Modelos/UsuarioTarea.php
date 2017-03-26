@@ -10,7 +10,7 @@ class UsuarioTarea extends Model
     protected $primaryKey = 'id_usuario_tarea';
 
     public function usuario(){
-    	return $this->belongsTo('App\Modelos\Usuario', 'id_usuario', 'id_tarea');
+    	return $this->belongsTo('App\Modelos\Usuario', 'id', 'id_tarea');
     }
 
     public function tarea(){
