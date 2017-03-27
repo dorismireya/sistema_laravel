@@ -12,59 +12,102 @@
 @section('main-content')
 	<div class="container-fluid spark-screen">
 		
-		<a class="btn btn-app">
-            <i class="fa fa-check"></i> Nueva Funcion
+		<a class="btn btn-primary">
+            <i class="fa fa-plus"></i> Nueva Funcion
       	</a>
 	</div>
+	<br>
 
-	<div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Funcion: </h3>
-                  <div class="box-tools">
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tr>
-                      <th>Tarea</th>
-                      <th>Vista</th>
-                      <th>Icono</th>
-                      <th>Detalle</th>
-                      <th></th>
+
+	<?php
+
+		for($i=0; $i < count($arreglos); $i++){
+
+			if($arreglos[$i][0] == "funcion"){
+
+				if($i!=0){
+
+					?>
+
+								</table>
+			                </div><!-- /.box-body -->
+			              </div><!-- /.box -->
+			            </div>
+			          </div>
+					<?php
+				}
+
+				?>
+
+					<div class="row">
+            			<div class="col-xs-12">
+              				<div class="box">
+				                <div class="box-header">
+				                  <h3 class="box-title">Funcion: {{$arreglos[$i][2]}} </h3>
+				                  <div class="box-tools">
+
+				                  	<div class="btn-group">
+		                      			<a class="btn btn-delault" data-toggle="tooltip" title="Nueva Tarea para la funcion: {{$arreglos[$i][2]}}">
+		                    				<i class="fa fa-plus"></i>
+		                  				</a>
+		                  				<a class="btn btn-delault" data-toggle="tooltip" title="Editar Funcion: {{$arreglos[$i][2]}}">
+		                    				<i class="fa fa-edit"></i>
+		                  				</a>
+		                  				<a class="btn btn-delault" data-toggle="tooltip" title="Eliminar Funcion: {{$arreglos[$i][2]}}">
+		                    				<i class="fa fa-trash"></i>
+		                  				</a>
+		                  			</div>
+				                  </div>
+				                </div><!-- /.box-header -->
+				                <div class="box-body table-responsive no-padding">
+				                  <table class="table table-striped">
+				                    <tr>
+				                      <th>Tarea</th>
+				                      <th>Vista</th>
+				                      <th>Icono</th>
+				                      <th>Detalle</th>
+				                      <th>
+				                      </th>
+				                    </tr>
+
+				<?php
+
+			}else{
+
+				?>
+					<tr>
+                      	<td>{{$arreglos[$i][2]}}</td>
+                      	<td>{{$arreglos[$i][3]}}</td>
+                      	<td>{{$arreglos[$i][4]}}</td>
+                      	<td>{{$arreglos[$i][5]}}</td>
+                      	<td>
+                      		<div class="btn-group">
+                      			<a class="btn btn-delault" data-toggle="tooltip" title="Ver usuarios">
+                    				<i class="fa fa-users"></i>
+                  				</a>
+                  				<a class="btn btn-delault" data-toggle="tooltip" title="Editar Tarea: {{$arreglos[$i][2]}}">
+                    				<i class="fa fa-edit"></i>
+                  				</a>
+                  				<a class="btn btn-delault" data-toggle="tooltip" title="Eliminar Tarea: {{$arreglos[$i][2]}}">
+                    				<i class="fa fa-trash"></i>
+                  				</a>
+                  			</div>
+                      	</td>
                     </tr>
-                    <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                  </table>
+					
+
+				<?php
+			}
+		}
+
+		?>
+
+					</table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div>
           </div>
+		<?php
+	?>
+
 @endsection
