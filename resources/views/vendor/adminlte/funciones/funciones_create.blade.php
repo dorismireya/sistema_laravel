@@ -13,37 +13,33 @@
 
 
 <div class="box box-info">
-  <div class="box-header with-border">
-    <h3 class="box-title">Horizontal Form</h3>
-  </div><!-- /.box-header -->
+  
   <!-- form start -->
+  <br>
   <form class="form-horizontal">
     <div class="box-body">
       <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <label for="inputFuncion" class="col-sm-2 control-label">Funcion</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          <input type="text" class="form-control" id="inputFuncion" placeholder="Nombre de Funcion">
         </div>
       </div>
       <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <label for="inputDetalle" class="col-sm-2 control-label">Detalle</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+          <input type="text" class="form-control" id="inputDetalle" placeholder="Detalle">
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Remember me
-            </label>
-          </div>
-        </div>
-      </div>
+      
     </div><!-- /.box-body -->
     <div class="box-footer">
-      <button type="submit" class="btn btn-default">Cancel</button>
-      <button type="submit" class="btn btn-info pull-right">Sign in</button>
+      
+      <a class="btn btn-default" href="{{route('adminFuncion.index')}}">
+        <i class="fa fa-close"></i> Cancelar
+      </a>
+
+      
+      <button type="submit" class="btn btn-info pull-right"><i class="fa fa-check"></i> Crear</button>
     </div><!-- /.box-footer -->
   </form>
 </div>

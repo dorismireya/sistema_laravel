@@ -29,3 +29,4 @@ Route::get('adminFuncion', 'FuncionController@index');
 
 //ruta para crud funciones
 Route::resource('funciones', 'FuncionesController');
+Route::resource('adminFuncion', 'FuncionController');
