@@ -24,5 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
 });
 
-Route::get('/home', 'HomeController@index');
-Route::get('/funciones.funcion', 'FuncionController@index');
+Route::get('home', 'HomeController@index');
+Route::get('adminFuncion', 'FuncionController@index');
+
+//ruta para crud funciones
+Route::resource('funciones', 'FuncionesController');

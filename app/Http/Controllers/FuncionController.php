@@ -14,13 +14,13 @@ class FuncionController extends Controller
     	->join('usuarios_tareas','usuarios_tareas.id_tarea','=','tareas.id_tarea')
     	->select(DB::raw('count(tareas.id_tarea) AS cantidad'))
     	->where('usuarios_tareas.id_usuario', '=', Auth()->user()->id)
-    	->where('tareas.vista', '=', 'funciones.funcion')->get();
+    	->where('tareas.vista', '=', 'adminFuncion')->get();
 		
 		
 		if($tarea_valida[0]->cantidad == 0)
 			return view('adminlte::errors.404');
 
-		unset($arreglo);
+		//unset($arreglo);
 		$puntero= 0;
 
 		$funciones= DB::table('funciones')

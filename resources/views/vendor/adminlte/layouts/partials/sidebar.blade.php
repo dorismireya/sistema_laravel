@@ -53,9 +53,12 @@
 
                 foreach ($funciones as $funcion ) {
 
-                    $contenedor= $contenedor."<li class=\"treeview\">";
-                    $contenedor= $contenedor."<a href=\"#\"><i class='fa fa-link'></i> <span>".$funcion->funcion."</span> <i class=\"fa fa-angle-left pull-right\"></i></a>";
-                    $contenedor= $contenedor."<ul class=\"treeview-menu\">";
+                    ?>
+
+                        <li class="treeview">
+                            <a href="#"><i class="fa fa-link"></i><span>{{$funcion->funcion}}</span><i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu"> 
+                    <?php
 
                     $tareas= DB::table('tareas')
                     ->join('usuarios_tareas','usuarios_tareas.id_tarea','=','tareas.id_tarea')
@@ -67,14 +70,23 @@
 
                     foreach ($tareas as $tarea) {
                 
-                        $contenedor= $contenedor."<li><a href=\"".$tarea->vista."\">".$tarea->tarea."</a></li>";
+                        
+                        ?>
+
+                            
+                            <li><a href="/{{$tarea->vista}}">{{$tarea->tarea}}</a></li>
+                        <?php
                     }
 
-            
-                    $contenedor= $contenedor."</ul>";
-                    $contenedor= $contenedor."</li>";
+                    
 
-                    echo $contenedor;
+                    ?>
+
+                    </ul>
+                    </li>
+
+                    <?php
+
 
                 }
             ?>

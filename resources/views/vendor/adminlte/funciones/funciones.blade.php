@@ -12,7 +12,7 @@
 @section('main-content')
 	<div class="container-fluid spark-screen">
 		
-		<a class="btn btn-primary">
+		<a class="btn btn-primary" href="{{route('funciones.create')}}">
             <i class="fa fa-plus"></i> Nueva Funcion
       	</a>
 	</div>
